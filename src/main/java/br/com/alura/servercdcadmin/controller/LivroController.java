@@ -2,6 +2,8 @@ package br.com.alura.servercdcadmin.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +24,7 @@ public class LivroController {
 	}
 	
 	@PostMapping("api/livros")
-	public Livro novoLivro(@RequestBody LivroForm novoLivro) {
+	public Livro novoLivro(@Valid @RequestBody LivroForm novoLivro) {
 	    return LivroDAO.salvar(novoLivro.build());
 	  }
 }

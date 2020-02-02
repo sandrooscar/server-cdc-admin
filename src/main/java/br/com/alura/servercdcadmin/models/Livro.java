@@ -1,13 +1,23 @@
 package br.com.alura.servercdcadmin.models;
 import java.math.BigDecimal;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+@Valid
 public class Livro {
 
 	private Integer id;
+	@NotNull(message="O título do livro não pode ser nulo") 
+	@NotEmpty(message="O título do livro não pode ser vazio") 
 	private String titulo;
+
+	@NotNull(message="O preço do livro não pode ser nulo") 
 	private BigDecimal preco;
-	private Autor autor;
 	
+	@NotNull(message="O autor do livro não pode ser nulo") 
+	private Autor autor;
 	
 	/**
 	 * @deprecated

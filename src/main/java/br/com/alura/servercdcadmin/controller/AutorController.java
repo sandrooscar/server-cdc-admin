@@ -2,6 +2,9 @@ package br.com.alura.servercdcadmin.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +24,7 @@ public class AutorController {
 	}
 	
 	@PostMapping("api/autores")
-	public Autor novoAutor(@RequestBody Autor novoAutor) {
+	public Autor novoAutor(@Valid @RequestBody Autor novoAutor) {
 	    return AutorDAO.salvar(novoAutor);
 	  }
 }

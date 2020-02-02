@@ -15,12 +15,12 @@ import br.com.alura.servercdcadmin.models.Autor;
 @CrossOrigin
 public class AutorController {
 
-	@GetMapping("/autores")
+	@GetMapping("api/autores")
 	public List<Autor> lista(){
 		return AutorDAO.lista();
 	}
 	
-	@PostMapping("/autores")
+	@PostMapping("api/autores")
 	public Autor novoAutor(@RequestBody Autor novoAutor) {
 	    return AutorDAO.salvar(novoAutor);
 	  }

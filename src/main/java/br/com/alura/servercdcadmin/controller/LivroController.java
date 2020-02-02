@@ -16,12 +16,12 @@ import br.com.alura.servercdcadmin.models.Livro;
 @CrossOrigin
 public class LivroController {
 
-	@GetMapping("/livros")
+	@GetMapping("api/livros")
 	public List<Livro> lista(){
 		return LivroDAO.lista();
 	}
 	
-	@PostMapping("/livros")
+	@PostMapping("api/livros")
 	public Livro novoLivro(@RequestBody LivroForm novoLivro) {
 	    return LivroDAO.salvar(novoLivro.build());
 	  }
